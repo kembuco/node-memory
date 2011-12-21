@@ -1,0 +1,15 @@
+body {
+  padding: 25px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {color: #00B7FF;}
+
+#memory{width:230px;margin: auto;}
+.clear {clear: both;}
+.player.active {font-weight: bold;}
+.row {margin-bottom: 5px;}
+.card {float: left; height: 75px; width: 50px; border: 1px solid; margin: 0 5px 5px 0; cursor: pointer;}
+.card.matched {visibility: hidden;}
+.card div {height: 65px; width: 40px; margin: 5px; font-size: 55px;}
+.card div.icon {background-color: blue;}

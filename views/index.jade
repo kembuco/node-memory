@@ -1,0 +1,36 @@
+#memory
+
+// Application includes
+script(src="/javascripts/model/Player.js")
+script(src="/javascripts/model/Deck.js")
+script(src="/javascripts/model/PlayerList.js")
+script(src="/javascripts/view/Card.js")
+script(src="/javascripts/view/Player.js")
+script(src="/javascripts/view/Memory.js")
+script(src="/javascripts/view/Scoreboard.js")
+script(src="/javascripts/view/StatusBar.js")
+script(src="/javascripts/Game.js")
+
+// Application bootstrap
+script
+	$(function() {
+		var game = new Game();
+
+		Backbone.history.start();		
+	});
+
+// View templates
+script(id="player", type="text/html")
+	<span>{{username}}:</span> <span>{{score}}</span>
+script(id="card", type="text/html")
+	<div class="{{^flipped}}icon{{/flipped}}">{{#flipped}}{{image}}{{/flipped}}</div>
+script(id="win", type="text/html")
+	<div>{{username}} has won the game with {{score}} matches.  What would you like to do?</div>
+	<button type="button" class="keepon">Keep Playing</button>
+	<button type="button" class="restart">New Game</button>
+script(id="gameOver", type="text/html")
+	<div>Game Over! {{username}} has won the game with {{score}} matches.  Click "New Game" to play again</div>
+	<button type="button" class="restart">New Game</button>
+script(id="tieGame", type="text/html")
+	<div>The game has ended in a tie!  Click "New Game" to play again.</div>
+	<button type="button" class="restart">New Game</button>
